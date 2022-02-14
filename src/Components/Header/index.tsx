@@ -1,12 +1,12 @@
 import React from 'react';
+import Logo from "../../Assets/pokearpia.png";
 import {HeaderStyled, ItemStyled, MenuStyled, LinkStyled, ImgStyled} from './HeaderStyled';
-// import Logo from './';
 
 const Header: React.FC = () => {
   return (
     <HeaderStyled>
       
-      <img src={"./pokearpia.png"}/>     
+      <ImgStyled src={Logo}/>     
 
       <MenuStyled>
         <ItemStyled>
