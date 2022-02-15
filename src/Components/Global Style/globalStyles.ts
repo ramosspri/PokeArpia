@@ -54,5 +54,10 @@ export const GlobalStyle = createGlobalStyle`
         --amarelo: #FFCC03;
         --branco: #FFFFFF;
         --background-modal: #000000;
+        --cinza: #C9C9C9;
     }
+
+    html {
+        background-color: var(--azul-escuro);
+    }   
 `

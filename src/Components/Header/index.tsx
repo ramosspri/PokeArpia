@@ -5,12 +5,12 @@ import {HeaderStyled, ItemStyled, MenuStyled, LinkStyled, ImgStyled} from './Hea
 const Header: React.FC = () => {
   return (
     <HeaderStyled>
-      
-      <ImgStyled src={Logo}/>     
-
+      <a href="/">
+        <ImgStyled src={Logo}/>     
+      </a>
       <MenuStyled>
         <ItemStyled>
-            <LinkStyled href="/">Home</LinkStyled>
+            <LinkStyled href="/">Início</LinkStyled>
         </ItemStyled>
         <ItemStyled>
             <LinkStyled href="/">Lendários</LinkStyled>
