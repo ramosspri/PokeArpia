@@ -48,13 +48,14 @@ export const ItemPokemon = styled.li`
 `
 
 export const ImagemPokemon = styled.div`
-
 `
 
 export const PerfilPokemon = styled.img`
-    height:70px;
-    width:70px;
+    height: 70px;
+    width: 70px;
     border-radius:50%;
+    background-color:var(--azul-escuro);
+
 `
 
 
