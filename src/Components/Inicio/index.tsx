@@ -9,18 +9,22 @@ export const Inicio: React.FC = () => {
   const [pokemons, setPokemons] = React.useState([]);
   const [proximaPagina, setProximaPagina] = React.useState("");
   const [anteriorPagina, setAnteriorPagina] = React.useState("");
-
+  const [acumulador, setAcumulador] = React.useState(0);
 
   React.useEffect(() => {
-    fetchPokemon();
+    fetchPokemon("https://pokeapi.co/api/v2/pokemon?limit=18&offset=0");
   }, []);
 
-  function trocarPagina(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    console.log(event.target);
+  function trocarPaginaProxima() {
+    fetchPokemon(proximaPagina);
+  }
+   function trocarPaginaAnterior() {
+     if(anteriorPagina)
+       fetchPokemon(anteriorPagina);
   }
 
-  function fetchPokemon() {
-    axios.get("https://pokeapi.co/api/v2/pokemon?limit=18&offset=0")
+  function fetchPokemon(url: string) {
+    axios.get(url)
     .then((response) => {
       if(response.data.next !== null) setProximaPagina(response.data.next);
       if(response.data.previous !== null) setAnteriorPagina(response.data.previous);
@@ -51,15 +55,15 @@ export const Inicio: React.FC = () => {
                             pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
                           }
                         </ParagrafoPokemon>
-                        <span style={{color:"#C9C9C9", fontSize:"12px"}}>{`#${index + 1}`}</span>
+                        <span style={{color:"#C9C9C9", fontSize:"14px"}}>{`#${index + 1}`}</span>
                       </div>
                     </NomePokemon>
                   </ItemPokemon>  
                 );
           })}
         <DivBotao>
-          <BotaoPokemon onClick={trocarPagina} >Página Anterior</BotaoPokemon>
-          <BotaoPokemon onClick={trocarPagina} >Próxima Página</BotaoPokemon>
+          <BotaoPokemon onClick={trocarPaginaAnterior} id="1">Página Anterior</BotaoPokemon>
+          <BotaoPokemon onClick={trocarPaginaProxima} id="2">Próxima Página</BotaoPokemon>
         </DivBotao>
       </ContainerPokemon>
     </InicioStyled>
