@@ -18,15 +18,16 @@ export const BarraStyled = styled.input`
     height:40px;
     width:450px;
     font-family: inherit;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+
 `
 export const ContainerPokemon = styled.ul`
     border: 1px solid var(--amarelo);
     border-radius:5px;
     display:grid;
     grid-template-columns: repeat(3,  1fr);
-    gap:20px;   
-    padding:20px;
+    gap:25px;   
+    padding:30px;
 `
 
 export const ItemPokemon = styled.li`
