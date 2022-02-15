@@ -13,9 +13,11 @@ export const Inicio: React.FC = () => {
   React.useEffect(() => {
     fetchPokemon("https://pokeapi.co/api/v2/pokemon?limit=18&offset=0");
   }, []);
+
   function trocarPaginaProxima() {
     fetchPokemon(proximaPagina);
   }
+  
    function trocarPaginaAnterior() {
      if(anteriorPagina)
        fetchPokemon(anteriorPagina);

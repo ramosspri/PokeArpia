@@ -19,7 +19,6 @@ export const BarraStyled = styled.input`
     width:450px;
     font-family: inherit;
     margin-bottom: 50px;
-
 `
 export const ContainerPokemon = styled.ul`
     border: 1px solid var(--amarelo);
@@ -36,7 +35,8 @@ export const ItemPokemon = styled.li`
     /* justify-content:space-between; */
     gap:30px;
     align-items: center;
-    padding:27px 20px 27px 20px;
+    /* padding:27px 20px 27px 20px; */
+    padding:15px;
     /* border-radius:10px;
     box-shadow:0px 3px 10px 0px #000 ; */
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
@@ -56,7 +56,7 @@ export const PerfilPokemon = styled.img`
     width: 70px;
     border-radius:50%;
     background-color:var(--azul-escuro);
-
+    padding:10px;
 `
 
 
