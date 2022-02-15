@@ -7,7 +7,7 @@ export const HeaderStyled = styled.header`
 `
 
 export const ImgStyled = styled.img`
-    height:100px;
+    height:120px;
 `
 
 

@@ -24,9 +24,9 @@ export const ContainerPokemon = styled.ul`
     border: 1px solid var(--amarelo);
     border-radius:5px;
     display:grid;
-    grid-template-columns: repeat(4,  1fr);
-    gap:10px;   
-    padding:10px;
+    grid-template-columns: repeat(3,  1fr);
+    gap:20px;   
+    padding:20px;
 `
 
 export const ItemPokemon = styled.li`
@@ -40,6 +40,11 @@ export const ItemPokemon = styled.li`
     box-shadow:0px 3px 10px 0px #000 ; */
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    cursor:pointer;
+
+    &:hover {
+        opacity:0.7;
+    }
 `
 
 export const ImagemPokemon = styled.div`
@@ -59,4 +64,29 @@ export const NomePokemon = styled.div`
 
 export const ParagrafoPokemon = styled.p`
     font-size:18px;
+`
+
+export const BotaoPokemon = styled.button`
+    color:var(--azul-escuro);
+    height:40px;
+    width:190px;
+    border-radius: 2rem;
+    border:none;
+    background-color: var(--amarelo);
+    font-weight:800;
+    font-size:15px;
+
+    &:hover {
+        cursor:pointer;
+        opacity:0.7;
+    }
+
+`
+export const DivBotao = styled.div`
+margin-top:20px;
+    grid-column:2;
+    display:flex;
+    gap:10px;
+
+
 `
