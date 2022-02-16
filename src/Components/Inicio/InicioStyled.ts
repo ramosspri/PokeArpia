@@ -4,7 +4,6 @@ export const InicioStyled = styled.div`
   
 `;
 
-
 export const ContainerCenter = styled.div`
     display:flex;
     justify-content:center;
@@ -20,15 +19,19 @@ export const BarraStyled = styled.input`
     font-family: inherit;
     margin-bottom: 50px;
 `
-export const ContainerPokemon = styled.ul`
+
+export const ContainerPokemon = styled.div`
     border: 1px solid var(--amarelo);
+    padding:30px;
     border-radius:5px;
+
+`
+export const Grid = styled.ul`
     display:grid;
     grid-template-columns: repeat(3,  1fr);
     gap:25px;   
-    padding:30px;
+    
 `
-
 export const ItemPokemon = styled.li`
     background-color:var(--azul-claro);
     display:flex;
@@ -89,6 +92,5 @@ margin-top:20px;
     grid-column:2;
     display:flex;
     gap:10px;
-
 
 `
