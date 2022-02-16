@@ -18,13 +18,15 @@ export const Inicio: React.FC = () => {
   const [controllerPesquisa, setControllerPesquisa] = React.useState(false);
   const [enterHappened, setEnterHappened] =React.useState(false);
 const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
+
   React.useEffect(() => {
     fetchPokemon(urle);
   }, []);
 
-React.useEffect(() => {
-  if(pesquisa) fetchPokemon(urle);
-}, [pesquisa])
+// React.useEffect(() => {
+//   if(pesquisa) fetchPokemon(urle);
+// }, [pesquisa])
+
   function pegarValor(event: React.ChangeEvent<HTMLInputElement>) {
     setPesquisa(event.target.value);
     setControllerPesquisa(!controllerPesquisa);
