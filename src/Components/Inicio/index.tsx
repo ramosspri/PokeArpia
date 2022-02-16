@@ -17,6 +17,7 @@ export const Inicio: React.FC = () => {
   const [pesquisa, setPesquisa] = React.useState("");
   const [controllerPesquisa, setControllerPesquisa] = React.useState(false);
   const [enterHappened, setEnterHappened] =React.useState(false);
+  const [error, setError] = React.useState(false);
 const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
 
   React.useEffect(() => {
@@ -30,15 +31,21 @@ const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
   function pegarValor(event: React.ChangeEvent<HTMLInputElement>) {
     setPesquisa(event.target.value);
     setControllerPesquisa(!controllerPesquisa);
+
   }
 
   function pesquisar(event: React.KeyboardEvent<HTMLInputElement>) {
-    if(event.key === "Enter") {
+    if(pesquisa !=  "." && pesquisa.length!=0 && event.key === "Enter") {
       setEnterHappened(true);
+      {console.log(pesquisa.toLowerCase())}
+      
       // setControllerPesquisa(!controllerPesquisa);
-      fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${pesquisa}/`);
-    } else if(event.key ==="Backspace") {
+        fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${pesquisa.toLowerCase()}/`);
+    } else if(pesquisa.length === 0 && event.key === "Backspace") {
       setEnterHappened(false)
+      setError(false);
+      fetchPokemon(urle);
+
     }
   }
 
@@ -54,32 +61,40 @@ const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
   function fetchPokemon(url: string) {
     axios.get(url)
     .then((response) => {
+        console.log(enterHappened);
+
       if(response.data.next !== null) setProximaPagina(response.data.next);
       if(response.data.previous !== null) setAnteriorPagina(response.data.previous);
-      if(controllerPesquisa) {
+      
+      if(response.data.forms) {
         setPokemonsPesquisado(response.data.forms[0]);
       }
+
       setPokemons(response.data.results);
-    });
+    })
+    .catch((err) => {
+      console.log(err);
+      setError(true);
+    })
   }
 
   return (
 
     <InicioStyled>
        <ContainerCenter>
-        <BarraStyled placeholder="Quem é esse Pokémon?" onChange={pegarValor} onKeyUp={pesquisar} />
+        <BarraStyled placeholder="Quem é esse Pokémon?" onChange={pegarValor} onKeyUp={pesquisar}   autoFocus/>
       </ContainerCenter>
 
       <ContainerPokemon>
         <Grid>
-              { enterHappened &&
+              { enterHappened  && !error &&
+
                         <ItemPokemon key={pokemonsPesquisado.name}>
                           <ImagemPokemon>
                             <PerfilPokemon src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemonsPesquisado.url.slice(39).slice(0, -1)}.png`}/>
                           </ImagemPokemon>
                           <NomePokemon>
                             <div>
-                          {console.log(pokemonsPesquisado)}
                               <ParagrafoPokemon>
                                 {
                                   pokemonsPesquisado.name.charAt(0).toUpperCase() + pokemonsPesquisado.name.slice(1)
@@ -91,7 +106,7 @@ const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
                         </ItemPokemon> 
                 }
 
-              {pokemons?.map((pokemon: Ipokemon, index:number) => {
+              { !error && pokemons?.map((pokemon: Ipokemon, index:number) => {
                     return(
                         <ItemPokemon key={pokemon.name}>
                           <ImagemPokemon>
@@ -111,8 +126,11 @@ const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
                     );
               }  )
             }
-          </Grid>
 
+          </Grid>
+            {error &&
+             <p style={{fontWeight:"800", }}>Pokémon não encontrado.</p>
+             }
         {!enterHappened && (
         <ContainerCenter>
             <DivBotao>
