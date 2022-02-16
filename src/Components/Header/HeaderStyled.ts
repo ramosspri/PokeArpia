@@ -4,6 +4,10 @@ export const HeaderStyled = styled.header`
     display:flex;
     justify-content:space-between;
     align-items:center;
+     @media(max-width: 500px) {
+        flex-direction: column;
+        position: relative;
+     }
 `
 
 export const ImgStyled = styled.img`
