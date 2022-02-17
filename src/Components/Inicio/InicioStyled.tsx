@@ -49,9 +49,11 @@ export const ItemPokemon = styled.li`
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     cursor:pointer;
+    scale:0;
 
     &:hover {
         opacity:0.7;
+        scale:2;
     }
     @media(max-width: 500px) {
         flex-direction: column;

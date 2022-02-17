@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({mostra, toggle, chave}) => {
                               <NomePokemon>{pokemon.name}</NomePokemon>
                               <div style={{display:"flex", justifyContent:"center"}}>
                               { pokemon.types?.map(({type}:any, index:number) => {
-                                   return ( <TipoPokemon>{index == 1 ? " | " : null} {type.name} </TipoPokemon> )
+                                   return ( <TipoPokemon>{index == 1 ? "\u00A0|\u00A0" : null} {type.name} </TipoPokemon> )
                                    }
                               )
                               }

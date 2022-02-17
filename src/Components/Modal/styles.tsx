@@ -53,10 +53,11 @@ export const ImagemPokemon = styled.img`
      width:170px;
      height:170px;
      border-radius:50%;
-     background-color:var(--azul-claro)
+     background-color:var(--azul-claro);
 `;
+
 export const NomePokemon = styled.h1`
-margin-top:20px;
+     margin-top:20px;
      font-weight:800;
      font-size:20px;
      text-transform:capitalize;
