@@ -18,6 +18,9 @@ export const BarraStyled = styled.input`
     width:450px;
     font-family: inherit;
     margin-bottom: 50px;
+    @media(max-width:500px) {
+        margin-top:50px;
+    }
 `
 
 export const ContainerPokemon = styled.div`
@@ -28,7 +31,8 @@ export const ContainerPokemon = styled.div`
 `
 export const Grid = styled.ul`
     display:grid;
-    grid-template-columns: repeat(3,  1fr);
+    /* grid-template-columns: repeat(3,  1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap:25px;   
     
 `
@@ -49,6 +53,11 @@ export const ItemPokemon = styled.li`
     &:hover {
         opacity:0.7;
     }
+    @media(max-width: 500px) {
+        flex-direction: column;
+        align-items:center;
+        gap:10px;
+ }
 `
 
 export const ImagemPokemon = styled.div`
@@ -62,15 +71,12 @@ export const PerfilPokemon = styled.img`
     padding:10px;
 `
 
-
 export const NomePokemon = styled.div`
 
 `
-
 export const ParagrafoPokemon = styled.p`
     font-size:18px;
 `
-
 export const BotaoPokemon = styled.button`
     color:var(--azul-escuro);
     height:40px;
@@ -85,12 +91,20 @@ export const BotaoPokemon = styled.button`
         cursor:pointer;
         opacity:0.7;
     }
+    @media(max-width: 500px) {
+        width: 90%;
+    }
 
 `
 export const DivBotao = styled.div`
 margin-top:20px;
-    grid-column:2;
-    display:flex;
-    gap:10px;
-
+grid-column:2;
+ display:flex;
+gap:10px;
+@media(max-width: 500px) {
+    flex-direction: column;
+    position: relative;
+    align-items:center;
+    width:100%;
+ }
 `
