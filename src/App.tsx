@@ -8,7 +8,6 @@ import {Modal, useModal} from './Components/Modal';
 import Sobre from './Components/Sobre';
 
 function App() {
-    const { mostra, toggle } = useModal();
 
     return (
       <>
