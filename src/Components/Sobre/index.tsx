@@ -1,9 +1,20 @@
-import React from 'react';
-
-// import { Container } from './styles';
+import React, { useState } from 'react'
+import { ContainerPokemon, ItemPokemon, StyledLink } from './styles';
 
 const Sobre: React.FC = () => {
-  return <p>sobre</p>;
+   return  (
+    <>      
+      <ItemPokemon>              
+        <StyledLink>O início de tudo</StyledLink>
+        <StyledLink>Concepção</StyledLink>
+        <StyledLink>Influências culturais</StyledLink>
+        <StyledLink>Curiosidades</StyledLink>
+        <StyledLink>Filmes</StyledLink>
+        <StyledLink>Jogos</StyledLink>
+        <StyledLink>Animes</StyledLink>      
+      </ItemPokemon>     
+    </>
+  );
 }
 
-export default Sobre;
+export default Sobre
