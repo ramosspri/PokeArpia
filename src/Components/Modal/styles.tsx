@@ -50,10 +50,26 @@ export const ContainerPokemonModalStatus = styled.div`
 `;
 
 export const ImagemPokemon = styled.img`
-     width:150px;
-     height:150px;
+     width:170px;
+     height:170px;
      border-radius:50%;
+     background-color:var(--azul-claro)
 `;
+export const NomePokemon = styled.h1`
+margin-top:20px;
+     font-weight:800;
+     font-size:20px;
+     text-transform:capitalize;
+     color: var(--branco);
+     text-align:center;
+`
+export const TipoPokemon = styled.span`
+     text-transform:capitalize;
+     color: var(--branco);
+     text-align:center;
+     margin-top:10px;
+
+`
 
 export const TabelaPokemon = styled.table`
      height:200px;
@@ -66,12 +82,13 @@ export const TabelaPokemon = styled.table`
 
 export const LinhaPokemon =  styled.tr`
    /* height:18px; */
+   text-transform: capitalize;
 `;
 
 const ColunaPokemon = styled.td`
 `
 export const ColunaPokemonNomeStatus = styled(ColunaPokemon)`
-     width:30%;
+     width:35%;
 `
 export const ColunaPokemonValorStatus = styled(ColunaPokemon)`
      width:15%;
@@ -79,7 +96,6 @@ export const ColunaPokemonValorStatus = styled(ColunaPokemon)`
 
 `
 export const ColunaPokemonBarraStatus = styled(ColunaPokemon)`
-
      width:50%;
 `
 export const BarraPokemon = styled.div`
@@ -88,9 +104,13 @@ export const BarraPokemon = styled.div`
      border-radius:10px;
      background-color:var(--branco);
 `;
-export const BarraPokemonPreenchida = styled.div`
+
+interface Iporcentagem {
+     width: number,
+}
+export const BarraPokemonPreenchida = styled.div<Iporcentagem>`
      height:10px;
-     width:50%;
+     width: ${props => Math.floor((props.width * 100) / 150) + "%"} ;
      border-radius:10px;
      background-color:var(--amarelo);
 `;
