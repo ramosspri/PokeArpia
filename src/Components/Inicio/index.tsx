@@ -29,7 +29,9 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
   const urle = "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0"
 
   React.useEffect(() => {
+
     fetchPokemon(urle);
+
   }, []);
 
 // React.useEffect(() => {
@@ -51,11 +53,11 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
   function pesquisar(event: React.KeyboardEvent<HTMLInputElement>) {
     if(pesquisa !=  "." && pesquisa.length!=0 && event.key === "Enter") {
       setEnterHappened(true);
-      
-      // setControllerPesquisa(!controllerPesquisa);
-        fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${pesquisa.toLowerCase()}/`);
 
-    } else if(pesquisa.length === 0 && event.key === "Backspace") {
+      fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${pesquisa.toLowerCase()}/`);
+
+    
+    } else if(pesquisa.length === 0 || event.key === "Backspace") {
       setEnterHappened(false)
       setError(false);
       fetchPokemon(urle);
@@ -86,7 +88,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
       setPokemons(response.data.results);
     })
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       setError(true);
     })
   }
@@ -101,7 +103,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
       <ContainerPokemon>
         <Grid>
               { enterHappened  && !error &&
-
+                        
                         <ItemPokemon onClick={(e) => {
                           pegarNomePokemonModal(e.currentTarget);
                           toggle();
@@ -124,6 +126,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
 
               { !error && pokemons?.map((pokemon: Ipokemon, index:number) => {
                     return(
+                      <>
                         <ItemPokemon onClick={(e) => {
                           toggle();
                           pegarNomePokemonModal(e.currentTarget);
@@ -142,6 +145,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
                             </div>
                           </NomePokemon>
                         </ItemPokemon> 
+                      </>
                     );
               }  )
             }
@@ -159,7 +163,6 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
           </ContainerCenter>)
         }
      </ContainerPokemon>
-
     {mostra ? <Modal mostra = {mostra} toggle={toggle} chave={chave}/> : null}
     </InicioStyled>
   );
