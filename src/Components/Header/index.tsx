@@ -28,13 +28,13 @@ const Header: React.FC = () => {
             >Lendários</NavLink>
         </ItemStyled>
         <ItemStyled>
-            <NavLink to="/sobre" className={"linkHeader"}
+            <NavLink to="/items" className={"linkHeader"}
              style={({ isActive }) => {
               return {
                 color: isActive ? "  #FFCC03" : "#FFFFFF"
               };
             }}
-            >Sobre</NavLink>
+            >Itens</NavLink>
         </ItemStyled>
       </MenuStyled>
     </HeaderStyled>

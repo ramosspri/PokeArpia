@@ -5,7 +5,7 @@ import Header from './Components/Header/index';
 import { Inicio } from './Components/Inicio';
 import Lendarios from './Components/Lendarios';
 import {useModal} from './Components/Modal';
-import Sobre from './Components/Sobre';
+import Items from './Components/Items';
 
 function App() {
   const { mostra, toggle } = useModal();
@@ -19,7 +19,7 @@ function App() {
             <Routes>
               <Route path="/"  element={<Inicio mostra={mostra} toggle={toggle} />} />
               <Route path="/lendarios" element={<Lendarios />} />
-              <Route path="/sobre" element={<Sobre />} />                  
+              <Route path="/items" element={<Items />} />                  
             </Routes>
           </BrowserRouter>
         </Container>
