@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       </a>
       <MenuStyled>
         <ItemStyled>
-            <NavLink to="/" end>Início</NavLink>
+            <NavLink to="/" end >Início</NavLink>
         </ItemStyled>
         <ItemStyled>
             <NavLink to="/lendarios">Lendários</NavLink>

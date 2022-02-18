@@ -9,7 +9,7 @@ export const Menu = styled.li`
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
     border-radius: 10px;    
     position: fixed;
-    top: 2;
+    top: 0;
     left: 0;
     height: 100vh; 
 `

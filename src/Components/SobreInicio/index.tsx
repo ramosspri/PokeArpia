@@ -1,9 +1,15 @@
 import React from 'react';
+import Sobre from '../Sobre';
 
 // import { Container } from './styles';
 
-const SobreInicio: React.FC = () => {
-  return <p>oi bebe</p>;
+const Historia: React.FC = () => {
+  return (
+    <>
+      <p>oi</p>
+      
+    </>
+  )
 }
 
-export default SobreInicio;
+export default Historia;
