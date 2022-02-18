@@ -11,13 +11,30 @@ const Header: React.FC = () => {
       </a>
       <MenuStyled>
         <ItemStyled>
-            <NavLink to="/" end >Início</NavLink>
+            <NavLink to="/" end className={"linkHeader"}
+            style={({ isActive }) => {
+              return {
+                color: isActive ? "  #FFCC03" : "#FFFFFF"
+              };
+            }}>Início</NavLink>
         </ItemStyled>
         <ItemStyled>
-            <NavLink to="/lendarios">Lendários</NavLink>
+            <NavLink to="/lendarios" className={"linkHeader"}
+             style={({ isActive }) => {
+              return {
+                color: isActive ? "  #FFCC03" : "#FFFFFF"
+              };
+            }}
+            >Lendários</NavLink>
         </ItemStyled>
         <ItemStyled>
-            <NavLink to="/sobre">Sobre</NavLink>
+            <NavLink to="/sobre" className={"linkHeader"}
+             style={({ isActive }) => {
+              return {
+                color: isActive ? "  #FFCC03" : "#FFFFFF"
+              };
+            }}
+            >Sobre</NavLink>
         </ItemStyled>
       </MenuStyled>
     </HeaderStyled>

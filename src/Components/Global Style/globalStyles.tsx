@@ -61,5 +61,12 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
 
     }   
+    .linkHeader {
+        color:inherit;
+        text-decoration:none;
+        &:hover {
+            color:var(--amarelo);
+        }
+    }
 
 `

@@ -1,63 +1,47 @@
-import React, { useState } from 'react'
-import { Menu, TextoMenu, TextIcons } from './styles';
+import React, { useState, } from 'react'
+import { Menu, TextoMenu, TextIcons, ContainerText, Titles, LinkstyledSobre, ContainerSobre} from './styles';
 import { Icon } from '@iconify/react';
-import { NavLink, Outlet, Link } from 'react-router-dom';
-
-const inicio: React.FC = () => {
-  return (
-    <div>Hello</div>
-  )
-}
-
 
 const Sobre: React.FC = () => {
   return (
-    <>             
+    <>      
+    <ContainerSobre>
       <Menu>
         <TextIcons>
           <Icon icon="mdi:pokemon-go" color="#ffcc03" height="30px"/>
           <TextoMenu>Sobre</TextoMenu>
-        </TextIcons>    
-          <Link to="/historia">
+        </TextIcons>  
+
+          <LinkstyledSobre href={"/historia"}>
             O início de tudo
-          </Link>
+          </LinkstyledSobre>          
 
-          <NavLink to={"/concepcao"} 
-          style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
-            Concepção
-          </NavLink>
-
-          <NavLink to={"/influencias"} 
-          style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
+          <LinkstyledSobre href={"/influencias"}>
             Influências culturais
-          </NavLink>
+          </LinkstyledSobre>
 
-          <NavLink to={"/curiosidades"} 
-          style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
+          <LinkstyledSobre href={"/curiosidades"}>
             Curiosidades
-          </NavLink>  
+          </LinkstyledSobre>  
 
           <TextIcons>
             <Icon icon="mdi:pokemon-go" color="#ffcc03" height="30px"/>
             <TextoMenu>Mídias</TextoMenu>
           </TextIcons>
 
-          <NavLink to={"/filmes"} 
-            style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
+          <LinkstyledSobre href={"/filmes"}>
               Filmes
-            </NavLink> 
+          </LinkstyledSobre> 
 
-            <NavLink to={"/jogos"} 
-            style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
+          <LinkstyledSobre href={"/jogos"}>
               Jogos
-            </NavLink> 
+          </LinkstyledSobre> 
 
-            <NavLink to={"/animes"} 
-            style={({ isActive }) => ({color: isActive ? '#fff' : 'var(--cinza)', textDecoration:'none',})}>
-              Animes
-            </NavLink>
-          <Outlet />
-      </Menu>     
+          <LinkstyledSobre href={"/animes"}>
+            Animes
+          </LinkstyledSobre>
+        </Menu>
+      </ContainerSobre>    
     </>
 )}
 
