@@ -1,29 +1,28 @@
 import styled from 'styled-components';
 import { GlobalStyle } from '../Global Style/globalStyles';
 
-export const ContainerPokemon = styled.div`
-    border: 1px solid var(--amarelo);
-    padding:30px;
-    border-radius:5px;
-`
-
-export const ItemPokemon = styled.li`
-    background-color:var(--azul-claro);
-    display: flex;
-    align-items: left;
-    padding:15px;
+export const Menu = styled.li`
+    background-color: var(--azul-claro);
+    display: grid;
+    padding-left: 40px;
+    padding-right: 40px;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;   
+    border-radius: 10px;    
+    position: fixed;
+    top: 2;
+    left: 0;
+    height: 100vh; 
+`
+export const TextoMenu = styled.span `   
+    display: inline;
+    color: var(--cinza);
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 10px;
 `
 
-export const ContainerCenter = styled.div`
-    display:flex;
-    justify-content:center;
+export const TextIcons = styled.div `    
+    padding-top: 10px;
+    margin-top: 10px;
+    display: inline;
 `
-
-export const StyledLink = styled.a`
-  color: var(--cinza);
-  font-weight: bold;
-  font-size: 20px;
-  padding: 10px;
-`;

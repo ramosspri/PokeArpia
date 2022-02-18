@@ -11,13 +11,13 @@ const Header: React.FC = () => {
       </a>
       <MenuStyled>
         <ItemStyled>
-            <LinkStyled href="/">Início</LinkStyled>
+            <NavLink to="/" end>Início</NavLink>
         </ItemStyled>
         <ItemStyled>
-            <LinkStyled href="/lendarios">Lendários</LinkStyled>
+            <NavLink to="/lendarios">Lendários</NavLink>
         </ItemStyled>
         <ItemStyled>
-            <LinkStyled href="/sobre">Sobre</LinkStyled>
+            <NavLink to="/sobre">Sobre</NavLink>
         </ItemStyled>
       </MenuStyled>
     </HeaderStyled>
