@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BackModal, HeaderModalStyled, BarraPokemon, BarraPokemonPreenchida, ColunaPokemonBarraStatus, ColunaPokemonNomeStatus, ColunaPokemonValorStatus, ContainerPokemonModalPerfil, ContainerPokemonModalStatus, ConteinerModal, ImagemPokemon, LinhaPokemon, ModalStyled, TabelaPokemon, NomePokemon, TipoPokemon } from './styles';
-import Pokemon from "../../Assets/pokemon-exemplo.jpg";
 import axios from "axios";
-import { matchPath } from 'react-router';
 export interface ModalProps {
      mostra: boolean,
      toggle: () => void;
@@ -61,7 +59,6 @@ export const Modal: React.FC<ModalProps> = ({mostra, toggle, chave}) => {
                          <ContainerPokemonModalStatus>
                               <TabelaPokemon>
                                         {pokemon.stats?.map((stats:any) => {
-                                             console.log(stats.stat.name, stats.base_stat);
                                             return( <LinhaPokemon key={stats.stat.name}> 
                                                   <ColunaPokemonNomeStatus>{stats.stat.name.replace("-", " ")}</ColunaPokemonNomeStatus>
                                                   <ColunaPokemonValorStatus>{stats.base_stat}</ColunaPokemonValorStatus>

@@ -30,7 +30,6 @@ function fetchItems(url: string) {
     if(response.data.next !== null) setProximaPagina(response.data.next);
     if(response.data.previous !== null) setAnteriorPagina(response.data.previous);
     setItems(response.data.results);
-    console.log(response.data.next);
   })
 }
 

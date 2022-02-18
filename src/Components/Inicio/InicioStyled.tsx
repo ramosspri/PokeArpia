@@ -27,14 +27,12 @@ export const ContainerPokemon = styled.div`
     border: 1px solid var(--amarelo);
     padding:30px;
     border-radius:5px;
-
 `
 export const Grid = styled.ul`
     display:grid;
     /* grid-template-columns: repeat(3,  1fr); */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap:25px;   
-    
 `
 export const ItemPokemon = styled.li`
     background-color:var(--azul-claro);
@@ -50,7 +48,6 @@ export const ItemPokemon = styled.li`
     border-radius: 10px;
     cursor:pointer;
     scale:0;
-
     &:hover {
         opacity:0.7;
         scale:2;
@@ -74,7 +71,6 @@ export const PerfilPokemon = styled.img`
 `
 
 export const NomePokemon = styled.div`
-
 `
 export const ParagrafoPokemon = styled.p`
     font-size:18px;
@@ -88,7 +84,6 @@ export const BotaoPokemon = styled.button`
     background-color: var(--amarelo);
     font-weight:800;
     font-size:15px;
-
     &:hover {
         cursor:pointer;
         opacity:0.7;

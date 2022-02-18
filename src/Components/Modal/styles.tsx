@@ -109,9 +109,12 @@ export const BarraPokemon = styled.div`
 interface Iporcentagem {
      width: number,
 }
+
+
 export const BarraPokemonPreenchida = styled.div<Iporcentagem>`
      height:10px;
-     width: ${props => Math.floor((props.width * 100) / 150) + "%"} ;
+     width: ${props  => Math.floor((props.width * 100) / 150) + "%"} ;
      border-radius:10px;
      background-color:var(--amarelo);
 `;
+

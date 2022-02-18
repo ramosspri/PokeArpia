@@ -34,15 +34,9 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
 
   }, []);
 
-// React.useEffect(() => {
-//   if(pesquisa) fetchPokemon(urle);
-// }, [pesquisa])
-
-
   function pegarNomePokemonModal(target: EventTarget ) {
     let element = target as HTMLElement;
     setChave(element.getAttribute("data-key"));
-    // console.log(element.attributes[0].value);
   }
 
   function pegarValor(event: React.ChangeEvent<HTMLInputElement>) {
@@ -100,7 +94,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
         <BarraStyled placeholder="Quem é esse Pokémon?" onChange={pegarValor} onKeyUp={pesquisar}   autoFocus/>
       </ContainerCenter>
 
-      <ContainerPokemon>
+      <ContainerPokemon >
         <Grid>
               { enterHappened  && !error &&
                         
@@ -108,7 +102,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
                           pegarNomePokemonModal(e.currentTarget);
                           toggle();
                         }} key={pokemonsPesquisado.name} data-key = {pokemonsPesquisado.name}>
-                          <ImagemPokemon>
+                          <ImagemPokemon >
                             <PerfilPokemon src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemonsPesquisado.url.slice(39).slice(0, -1)}.png`} data-key = {pokemonsPesquisado.name}/>
                           </ImagemPokemon>
                           <NomePokemon >
@@ -131,7 +125,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
                           toggle();
                           pegarNomePokemonModal(e.currentTarget);
                         }} key = {pokemon.name} data-key={pokemon.name} >
-                          <ImagemPokemon >
+                          <ImagemPokemon  >
                             <PerfilPokemon src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.url.slice(34).slice(0, -1)}.png`}/>
                           </ImagemPokemon>
                           <NomePokemon >
