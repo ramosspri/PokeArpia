@@ -157,7 +157,7 @@ export const Inicio: React.FC<ModalProps> = ({mostra, toggle}) => {
           </ContainerCenter>)
         }
      </ContainerPokemon>
-    {mostra ? <Modal mostra = {mostra} toggle={toggle} chave={chave}/> : null}
+    {mostra ? <Modal mostra = {mostra} toggle={toggle} chave={chave}/> : <></>}
     </InicioStyled>
   );
 }
